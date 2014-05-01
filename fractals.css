@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+div#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+canvas#c {
+    display: block;
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+canvas#c p {
+    margin: 10px;
+}
+
+p#mousePos {
+    float: right;
+}
+
+fieldset#controls {
+    width: 400px;
+    margin: 0 auto;
+}
