@@ -14,13 +14,18 @@
         </p>
     </canvas>
 
-    <p id="mousePos"></p>
 
     <form>
         <fieldset id="controls">
+            <p id="mousePos">(0, 0)</p>
             <legend>Render controls</legend>
             <table>
-                <tr><th><label for="iterations">Iterations:</label></th><td><input id="iterations" type="text"></td></tr>
+                <tr><th><label for="iterations">Iterations:</label></th><td><input id="iterations" type="text" size="1" value="20"></td></tr>
+                <tr><td><input type="checkbox" id="axes" class="right"></td><td><label for="axes">Show Axes</label></td></tr>
+                <tr><td colspan="2"><input type="button" id="renderBtn" value="Render Fractal"></td></tr>
+                <tr><td colspan="2">Right click...</td></tr>
+                <tr><td><input type="radio" id="clickZoom" class="right" name="click" value="zoom" checked></td><td><label for="clickZoom">Zooms</label></td></tr>
+                <tr id="juliaRow"><td><input type="radio" id="clickJulia" class="right" name="clicK" value="julia"></td><td><label for="clickJulia">Displays corresponding Julia set</label></td></tr>
             </table>
         </fieldset>
     </form>

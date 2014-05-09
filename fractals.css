@@ -26,3 +26,12 @@ fieldset#controls {
     width: 400px;
     margin: 0 auto;
 }
+
+fieldset#controls p#mousePos {
+    margin: 0;
+}
+
+.right {
+    display: block;
+    float: right;
+}
