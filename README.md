@@ -3,6 +3,8 @@ Mandlebrot and Julia Sets
 
 Renders a Mandlebrot set using Javascript and the <canvas> object. Does not need external libraries. Also visualizes Julia sets at arbitrary points in the Mandlebrot.
 
+View at: [https://rawgit.com/Nmael/MandlebrotAndJuliaSets/master/Mandlebrot.html][https://rawgit.com/Nmael/MandlebrotAndJuliaSets/master/Mandlebrot.html]
+
 Features:
 * Zooming into arbitrary points.
 * Corresponding Julia set rendering.
