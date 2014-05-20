@@ -76,14 +76,21 @@ Fractal.prototype.getEscapeColor = function(value, itersTaken) {
 }
 
 Fractal.prototype.setPixel = function(pixels, x, y, color) {
+    var r = 0;
+    var g = 0;
+    var b = 0;
     if(this.showAxes && (x == this.canvas.width / 2 || y == this.canvas.height / 2)) {
-            color[0] = color[1] = color[2] = 255;
+            r = g = b = 255;
+    } else {
+        r = color[0];
+        g = color[1];
+        b = color[2];
     }
 
     var index = (x + y * this.canvas.width) * 4;
-    pixels.data[index + 0] = color[0];
-    pixels.data[index + 1] = color[1];
-    pixels.data[index + 2] = color[2];
+    pixels.data[index + 0] = r;
+    pixels.data[index + 1] = g;
+    pixels.data[index + 2] = b;
     pixels.data[index + 3] = 255;
 }
 
@@ -245,7 +252,7 @@ JuliaFractal.prototype.iterate = function(zr, zi) {
         }
     }
 
-    return [0, Infinity];  // we never escaped - we're inside the Mandlebrot
+    return {'value': 0, 'iters': Infinity};  // we never escaped - we're inside the Mandlebrot
 }
 
 JuliaFractal.prototype.draw = function () {
