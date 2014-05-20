@@ -102,7 +102,7 @@ Fractal.prototype.toFractalSpace = function (x, y) {
     };
 }
 
-Fractal.prototype.zoom = function(level, canvasX, canvasY) {
+Fractal.prototype.zoom = function(canvasX, canvasY) {
     var center = this.toFractalSpace(canvasX, canvasY);
     var oldCenter = {x: (this.xRange[0] + this.xRange[1]) / 2,
                      y: (this.yRange[0] + this.yRange[1]) / 2};
@@ -240,7 +240,7 @@ JuliaFractal.prototype.iterate = function(zr, zi) {
         zr = zr2 - zi2 + this.cr;
 
         if( zr2 + zi2 > 4 ) { // we escaped!
-            return [Math.sqrt(zr2 + zi2), itersTaken];
+            return {'value': Math.sqrt(zr2 + zi2), 'iters': itersTaken};
             break;
         }
     }
@@ -307,7 +307,7 @@ window.onload = function() {
     $('c').addEventListener('click', function(e) {
         var mousePos = getMousePos(e, $('c'));
         if ($('clickZoom').checked) {
-            PageFractal.zoom(2, mousePos.x, mousePos.y);
+            PageFractal.zoom(mousePos.x, mousePos.y);
         } else if(getFractalType() == 'mandlebrot') {
             window.open(juliaLink(PageFractal, mousePos.x, mousePos.y));
         }

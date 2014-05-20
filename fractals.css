@@ -9,6 +9,8 @@
  */
 
 body {
+    background-color: #000000;
+    color: #FFFFFF;
     margin: 0;
     font-family: "helvetica", sans-serif;
 }
