@@ -1,5 +1,24 @@
+/*
+ * Programming Project #4
+ * CSSE 325
+ * Nate Moore
+ * CM 722
+ *
+ * fractal.css
+ *  Style information for Mandlebrot.html. 
+ */
+
 body {
     margin: 0;
+    font-family: "helvetica", sans-serif;
+}
+
+h1#fractalHeader {
+    margin: 0;
+}
+
+h1#fractalHeader span#juliaLoc {
+    display: none;
 }
 
 div#wrapper {
@@ -22,13 +41,26 @@ p#mousePos {
     float: right;
 }
 
-fieldset#controls {
-    width: 400px;
+form#controlsForm {
+    display: block;
     margin: 0 auto;
+    width: 800px;
+}
+
+fieldset#mouseControls {
+    display: inline;
+    width: 40%;
+}
+
+fieldset#controls {
+    display: inline;
+    float: right;
+    width: 40%;
 }
 
 fieldset#controls p#mousePos {
     margin: 0;
+    font-size: 8pt;
 }
 
 .right {

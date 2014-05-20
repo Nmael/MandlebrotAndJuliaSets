@@ -1,12 +1,25 @@
+<!--
+ * Programming Project #4
+ * CSSE 325
+ * Nate Moore
+ * CM 722
+ *
+ * Mandlebrot.html
+ *  Display for fractal.js. Includes the canvas that the fractal
+ *  will be rendered to, and the controls for changing the render.
+-->
+
+
 <html>
 <head>
-	<title>Mandlebrot</title>
+	<title>Mandlebrot and Julia Sets</title>
     <link rel="stylesheet" type="text/css" href="fractals.css" />
     <script language="javascript" src="fractals.js"></script>
 	</script>
 </head>
 <body>
-<div>
+<div id="wrapper">
+    <h1 id="fractalHeader">The <span id="fractalName"></span> Fractal <span id="juliaLoc">at (<span id="juliaX"></span>, <span id="juliaY"></span>)</h1>
     <canvas id="c" width="800" height="600">
         <p>
             <a href="mailto:%6d%6f%6f%72%65%6e%64%40%72%6f%73%65%2d%68%75%6c%6d%61%6e%2e%65%64%75">Nathanael Moore</a><br />
@@ -15,17 +28,23 @@
     </canvas>
 
 
-    <form>
+    <form id="controlsForm">
+        <fieldset id="mouseControls">
+            <legend>Left clicking...</legend>
+            <table>
+                <tr><td><input type="radio" id="clickZoom" class="right" name="click" value="zoom" checked></td><td><label for="clickZoom">Zooms into the graph.</label></td></tr>
+                <tr id="juliaRow"><td><input type="radio" id="clickJulia" class="right" name="clicK" value="julia"></td><td><label for="clickJulia">Displays the corresponding Julia set.</label></td></tr>
+            </table>
+        </fieldset>
+
         <fieldset id="controls">
             <p id="mousePos">(0, 0)</p>
             <legend>Render controls</legend>
             <table>
                 <tr><th><label for="iterations">Iterations:</label></th><td><input id="iterations" type="text" size="1" value="20"></td></tr>
-                <tr><td><input type="checkbox" id="axes" class="right"></td><td><label for="axes">Show Axes</label></td></tr>
-                <tr><td colspan="2"><input type="button" id="renderBtn" value="Render Fractal"></td></tr>
-                <tr><td colspan="2">Right click...</td></tr>
-                <tr><td><input type="radio" id="clickZoom" class="right" name="click" value="zoom" checked></td><td><label for="clickZoom">Zooms</label></td></tr>
-                <tr id="juliaRow"><td><input type="radio" id="clickJulia" class="right" name="clicK" value="julia"></td><td><label for="clickJulia">Displays corresponding Julia set</label></td></tr>
+                <tr><td><input type="checkbox" id="axes" class="right"></td><td><label for="axes">Show X and Y axes.</label></td></tr>
+                <tr><th>Coloring:</th><td><input type="radio" name="coloring" value="smooth" id="coloringSmooth" checked="true" /> <label for="coloringSmooth">Smooth</label> <input type="radio" name="coloring" value="linear" id="coloringLinear" /> <label for="coloringLinear">Linear</label></td></tr>
+                <tr><td colspan="2"><input type="button" id="renderBtn" value="Render Fractal"> Render time: <span id="renderTime"></span>ms</td></tr>
             </table>
         </fieldset>
     </form>
